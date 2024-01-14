@@ -71,7 +71,9 @@ dependencies {
     ksp(libs.room.compiler)
     implementation(libs.swipe.refresh)
     implementation(libs.appcompat)
-    // implementation(libs.material)
+    implementation(libs.recyclerview)
+    implementation(libs.coordinatorlayout)
+    implementation(libs.material)
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)

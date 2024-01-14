@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/delete"
+        android:title="@string/edit_toolbar_item1"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/clear"
+        android:icon="@drawable/round_clear"
+        android:title="@string/edit_toolbar_item2"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/save"
+        android:icon="@drawable/round_done"
+        android:title="@string/edit_toolbar_item3"
+        app:showAsAction="always" />
+</menu>

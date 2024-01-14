@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">酥梨日记本</string>
+    <string name="main_title">酥梨日记本</string>
+    <string name="edit_hint_title">标题</string>
+    <string name="edit_hint_content">开始书写</string>
+    <string name="main_toolbar_item1">设置列表模式</string>
+    <string name="edit_toolbar_item1">删除</string>
+    <string name="edit_toolbar_item2">清空</string>
+    <string name="edit_toolbar_item3">保存</string>
+    <string name="main_search">搜索笔记</string>
 </resources>
