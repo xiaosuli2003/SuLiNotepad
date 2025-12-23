@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class NoteAdapter(private val context: Context, var noteList: List<Note>) :
     RecyclerView.Adapter<NoteAdapter.ViewHolder>() {
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var textTitle: TextView = itemView.findViewById(R.id.text_title)
         var textContent: TextView = itemView.findViewById(R.id.text_content)
         var textTime: TextView = itemView.findViewById(R.id.text_time)
@@ -36,7 +36,7 @@ class NoteAdapter(private val context: Context, var noteList: List<Note>) :
                 setNegativeButton("取消", null)
                 setPositiveButton("确定") { _, _ ->
                     val id = note.id.toInt()
-                    val repository = NoteRepository(context)
+                    val repository = NoteRepository()
                     repository.deleteNote(id)
                 }
                 show()

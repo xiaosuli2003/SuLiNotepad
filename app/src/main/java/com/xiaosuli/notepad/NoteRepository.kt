@@ -1,15 +1,14 @@
 package com.xiaosuli.notepad
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import kotlin.concurrent.thread
 
-class NoteRepository(context: Context) {
+class NoteRepository {
 
-    private val noteDao = AppDataBase.getDataBase(context).noteDao()
+    private val noteDao = AppDataBase.getDataBase().noteDao()
     private var dateFormat = SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss", Locale.CHINA)
     private var date = Date(System.currentTimeMillis()) // 获取系统当前时间
     private var time = dateFormat.format(date)

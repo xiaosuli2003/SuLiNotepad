@@ -1,14 +1,13 @@
 package com.xiaosuli.notepad
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 
-class NoteViewModel(application: Application) : AndroidViewModel(application) {
+class NoteViewModel : ViewModel() {
 
     var flag = true
 
-    private val repository = NoteRepository(application)
+    private val repository = NoteRepository()
 
     fun insertNote(title: String, content: String): Long {
         return repository.insertNote(title, content)
