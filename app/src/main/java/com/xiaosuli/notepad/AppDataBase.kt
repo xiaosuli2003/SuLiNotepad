@@ -1,6 +1,5 @@
 package com.xiaosuli.notepad
 
-import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -15,17 +14,16 @@ abstract class AppDataBase : RoomDatabase() {
         private var instance: AppDataBase? = null
 
         @Synchronized
-        fun getDataBase(context: Context): AppDataBase {
+        fun getDataBase(): AppDataBase {
             instance?.let {
                 return it
             }
             return Room.databaseBuilder(
-                context.applicationContext,
+                App.context,
                 AppDataBase::class.java, "app_database"
-            )
-                .build().apply {
-                    instance = this
-                }
+            ).build().apply {
+                instance = this
+            }
         }
     }
 }

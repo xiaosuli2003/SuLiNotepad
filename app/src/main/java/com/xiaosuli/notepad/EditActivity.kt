@@ -9,8 +9,10 @@ import android.view.MenuItem
 import android.view.inputmethod.InputMethodManager
 import android.window.OnBackInvokedDispatcher
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import com.xiaosuli.notepad.databinding.NoteEditBinding
 import kotlin.concurrent.thread
@@ -44,7 +46,13 @@ class EditActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
         // 修改状态栏字体颜色，用AndroidX官方兼容API
         val wic = ViewCompat.getWindowInsetsController(window.decorView)
         // true表示Light Mode，状态栏字体呈黑色，反之呈白色
